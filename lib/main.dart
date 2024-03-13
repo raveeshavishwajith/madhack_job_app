@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:madhack_job_app/Global_variables.dart';
 import 'package:madhack_job_app/pages/carousel_slider_screen.dart';
+import 'package:madhack_job_app/pages/jobform.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const CarouselSliderScreen(),
+      home: Jobform(),
+      //const CarouselSliderScreen(),
     );
   }
 }
