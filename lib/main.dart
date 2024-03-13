@@ -22,8 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: Jobform(),
-      //const CarouselSliderScreen(),
+      home: const CarouselSliderScreen(),
     );
   }
 }
