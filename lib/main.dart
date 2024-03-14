@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:madhack_job_app/Global_variables.dart';
 import 'package:madhack_job_app/pages/carousel_slider_screen.dart';
+import 'package:madhack_job_app/pages/jobform.dart';
 
 void main() {
   runApp(const MyApp());
