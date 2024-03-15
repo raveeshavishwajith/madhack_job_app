@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:madhack_job_app/components/jobformFields.dart';
 
-
 enum JobType { Remote, Onsite, Hybrid }
-enum JobMode {mode1,mode2}
+
+enum JobMode { mode1, mode2 }
 
 class Jobform extends StatefulWidget {
   const Jobform({super.key});
@@ -69,33 +69,38 @@ class _JobformState extends State<Jobform> {
               height: 50,
               width: 350,
               right: 20,
+              left: 20,
             ),
             Jobfields(
-                controller: jobDescriptionController,
-                hinttext: 'Job Description',
-                obscuretext: false,
-                height: 100,
-                width: 350,
-                right: 20),
+              controller: jobDescriptionController,
+              hinttext: 'Job Description',
+              obscuretext: false,
+              height: 100,
+              width: 350,
+              right: 20,
+              left: 20,
+            ),
             Jobfields(
-                controller: jobResponsibilitiesController,
-                hinttext: 'Key Responsibilities',
-                obscuretext: false,
-                height: 100,
-                width: 350,
-                right: 20),
+              controller: jobResponsibilitiesController,
+              hinttext: 'Key Responsibilities',
+              obscuretext: false,
+              height: 100,
+              width: 350,
+              right: 20,
+              left: 20,
+            ),
             Jobfields(
-                controller: jobRequirmentController,
-                hinttext: 'Requirments',
-                obscuretext: false,
-                height: 100,
-                width: 350,
-                right: 20),
-
-                Container(
-             
-              margin:
-                  const EdgeInsets.only(left: 20.0, right: 20, bottom: 8.0, top: 5.0),
+              controller: jobRequirmentController,
+              hinttext: 'Requirments',
+              obscuretext: false,
+              height: 100,
+              width: 350,
+              right: 20,
+              left: 20,
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                  left: 20.0, right: 20, bottom: 8.0, top: 5.0),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: const Color(0xFF095B66),
@@ -105,19 +110,21 @@ class _JobformState extends State<Jobform> {
               ),
               child: DropdownMenu(
                 width: 350,
-                
                 textStyle: const TextStyle(
                   fontSize: 20,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.normal,
                   color: Color(0xFF095B66),
                 ),
-                label: const Text('Job Type',style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.normal,
-                  color: Color(0xFF095B66),
-                ),),
+                label: const Text(
+                  'Job Type',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.normal,
+                    color: Color(0xFF095B66),
+                  ),
+                ),
                 enableSearch: true,
                 onSelected: (jobtype) {
                   if (jobtype != null) {
@@ -133,12 +140,9 @@ class _JobformState extends State<Jobform> {
                 ],
               ),
             ),
-
-
             Container(
-             
-              margin:
-                  const EdgeInsets.only(left: 20.0, right: 20, bottom: 8.0, top: 5.0),
+              margin: const EdgeInsets.only(
+                  left: 20.0, right: 20, bottom: 8.0, top: 5.0),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: const Color(0xFF095B66),
@@ -148,19 +152,21 @@ class _JobformState extends State<Jobform> {
               ),
               child: DropdownMenu(
                 width: 350,
-                
                 textStyle: const TextStyle(
                   fontSize: 20,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.normal,
                   color: Color(0xFF095B66),
                 ),
-                label: const Text('Job Mode',style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.normal,
-                  color: Color(0xFF095B66),
-                ),),
+                label: const Text(
+                  'Job Mode',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.normal,
+                    color: Color(0xFF095B66),
+                  ),
+                ),
                 enableSearch: true,
                 onSelected: (jobmode) {
                   if (jobmode != null) {
@@ -172,7 +178,6 @@ class _JobformState extends State<Jobform> {
                 dropdownMenuEntries: <DropdownMenuEntry<JobMode>>[
                   DropdownMenuEntry(value: JobMode.mode1, label: 'mode1'),
                   DropdownMenuEntry(value: JobMode.mode2, label: 'mode2'),
-                 
                 ],
               ),
             ),
@@ -180,30 +185,35 @@ class _JobformState extends State<Jobform> {
               child: Row(
                 children: [
                   Jobfields(
-                      controller: salaryController,
-                      hinttext: "Salary",
-                      obscuretext: false,
-                      height: 50,
-                      width: 165,
-                      right: 2),
+                    controller: salaryController,
+                    hinttext: "Salary",
+                    obscuretext: false,
+                    height: 50,
+                    width: 165,
+                    right: 2,
+                    left: 20,
+                  ),
                   Jobfields(
-                      controller: locationController,
-                      hinttext: "Location",
-                      obscuretext: false,
-                      height: 50,
-                      width: 165,
-                      right: 20)
+                    controller: locationController,
+                    hinttext: "Location",
+                    obscuretext: false,
+                    height: 50,
+                    width: 165,
+                    right: 20,
+                    left: 20,
+                  )
                 ],
               ),
             ),
-
-            SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Container(
                 margin: const EdgeInsets.only(
                     left: 20.0, right: 20, bottom: 8.0, top: 5.0),
                 child: ElevatedButton(
                   onPressed: () {},
-                  child:  Text(
+                  child:Text(
                     "Add",
                     style: TextStyle(
                         fontSize: 22,
@@ -224,7 +234,6 @@ class _JobformState extends State<Jobform> {
                     ),
                   ),
                 )),
-            
           ],
         ),
       ),

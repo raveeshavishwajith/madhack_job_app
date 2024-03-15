@@ -7,6 +7,7 @@ class Jobfields extends StatelessWidget {
   final double height ;
   final double width ;
   final double right ;
+  final double left;
 
   const Jobfields(
       {super.key,
@@ -16,6 +17,7 @@ class Jobfields extends StatelessWidget {
       required this.height,
       required this.width,
       required this.right,
+      required this.left,
       });
 
   @override
@@ -24,7 +26,7 @@ class Jobfields extends StatelessWidget {
       height: height,
       width: width,
       margin:
-           EdgeInsets.only(left: 20.0, right: right, bottom: 8.0, top: 5.0),
+           EdgeInsets.only(left: left, right: right, bottom: 8.0, top: 5.0),
       decoration: BoxDecoration(
         border: Border.all(
           color: const Color(0xFF095B66),
