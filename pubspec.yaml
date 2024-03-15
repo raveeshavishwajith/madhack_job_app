@@ -39,6 +39,7 @@ dependencies:
   carousel_slider: ^4.2.1
   google_fonts: ^6.2.0
   animated_text_kit: ^4.2.2
+  iconify_flutter: ^0.0.5
 
 dev_dependencies:
   flutter_test:

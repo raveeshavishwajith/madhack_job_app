@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:madhack_job_app/Global_variables.dart';
 import 'package:madhack_job_app/pages/carousel_slider_screen.dart';
 import 'package:madhack_job_app/pages/jobform.dart';
+import 'package:madhack_job_app/pages/navigationBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +15,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: 'Poppins',
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: GlobalVariables.darkGreen,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+          // colorScheme: ColorScheme.fromSeed(
+          //   seedColor: GlobalVariables.darkGreen,
+          // ),
+          
+          useMaterial3: true,
         ),
-        useMaterial3: true,
-      ),
-      home: const CarouselSliderScreen(),
-    );
+        home: BottomBar()
+        //const CarouselSliderScreen(),
+        );
   }
 }
