@@ -4,6 +4,8 @@ import 'package:madhack_job_app/pages/carousel_slider_screen.dart';
 import 'firebase_options.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
+import 'package:madhack_job_app/pages/jobform.dart';
+import 'package:madhack_job_app/pages/navigationBar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,15 +22,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: 'Poppins',
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: GlobalVariables.darkGreen,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+          // colorScheme: ColorScheme.fromSeed(
+          //   seedColor: GlobalVariables.darkGreen,
+          // ),
+          
+          useMaterial3: true,
         ),
-        useMaterial3: true,
-      ),
-      home: const CarouselSliderScreen(),
-    );
+        home: BottomBar()
+        //const CarouselSliderScreen(),
+        );
   }
 }
