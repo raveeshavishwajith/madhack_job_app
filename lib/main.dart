@@ -24,8 +24,7 @@ class MyApp extends StatelessWidget {
           
           useMaterial3: true,
         ),
-        home: BottomBar()
-        //const CarouselSliderScreen(),
+        home:const CarouselSliderScreen(),
         );
   }
 }
