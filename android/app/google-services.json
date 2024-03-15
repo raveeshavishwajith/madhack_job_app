@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1048230953763",
+    "project_id": "madhackjobapp",
+    "storage_bucket": "madhackjobapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048230953763:android:9ed97fefba289858f88296",
+        "android_client_info": {
+          "package_name": "com.example.madhack_job_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNdAsuTRhVdfnH0SiawpHOpJdvmsiUXG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
