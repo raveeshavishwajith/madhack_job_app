@@ -39,7 +39,7 @@ class _EmployerprofileState extends State<Employerprofile> {
         child: Column(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 80,),
+            const SizedBox(height: 28,),
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -112,7 +112,7 @@ class _EmployerprofileState extends State<Employerprofile> {
                   color: Color(0xFF095B66)),
             ),
             const SizedBox(
-              height: 40,
+              height: 60,
             ),
             Container(
               child: Column(
@@ -256,7 +256,7 @@ class _EmployerprofileState extends State<Employerprofile> {
                     ],
                   ),
                   const SizedBox(
-                    height: 8,
+                    height: 15,
                   ),
                  
                   const Divider(
@@ -264,7 +264,7 @@ class _EmployerprofileState extends State<Employerprofile> {
                     thickness: 2, // Change line thickness as needed
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   const Row(
                     children: [
