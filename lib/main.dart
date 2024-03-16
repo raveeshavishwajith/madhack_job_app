@@ -34,9 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:const CurvedBar()
-      
-      //AuthenticationWrapper(),
+      home:const AuthenticationWrapper(),
     );
   }
 }
