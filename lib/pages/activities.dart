@@ -311,15 +311,15 @@ class _ActivitiesState extends State<Activities> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Wrap(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: SingleChildScrollView(
+        child: Wrap(
+          children: [
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Align(
+                const Padding(
+                  padding: EdgeInsets.only(left: 35.0, top: 30, bottom: 10),
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Activities',
@@ -327,8 +327,11 @@ class _ActivitiesState extends State<Activities> {
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF095B66)),
-                    )),
+                    ),
+                  ),
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       height: 50,
@@ -565,7 +568,7 @@ class _ActivitiesState extends State<Activities> {
                             color: Colors.grey.withOpacity(0.5), // Shadow color
                             spreadRadius: 2, // Spread radius
                             blurRadius: 5, // Blur radius
-                            offset: Offset(0, 3),
+                            offset: const Offset(0, 3),
                             // Offset
                           ),
                         ],
@@ -660,7 +663,7 @@ class _ActivitiesState extends State<Activities> {
                                       borderRadius: BorderRadius.circular(5)),
                                   child: IconButton(
                                       iconSize: 60,
-                                      onPressed: () {},
+                                      onPressed: viewCareer,
                                       icon: const Iconify(
                                         Ic.outline_remove_red_eye,
                                         color: Colors.white,
@@ -709,13 +712,14 @@ class _ActivitiesState extends State<Activities> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Color(0xFFF095B66), width: 1),
+                        border: Border.all(
+                            color: const Color(0xfff095b66), width: 1),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5), // Shadow color
                             spreadRadius: 2, // Spread radius
                             blurRadius: 5, // Blur radius
-                            offset: Offset(0, 3),
+                            offset: const Offset(0, 3),
                             // Offset
                           ),
                         ],
@@ -960,7 +964,7 @@ class _ActivitiesState extends State<Activities> {
                                       borderRadius: BorderRadius.circular(5)),
                                   child: IconButton(
                                       iconSize: 60,
-                                      onPressed: () {},
+                                      onPressed: viewCareer,
                                       icon: const Iconify(
                                         Ic.outline_remove_red_eye,
                                         color: Colors.white,
@@ -1110,7 +1114,7 @@ class _ActivitiesState extends State<Activities> {
                                       borderRadius: BorderRadius.circular(5)),
                                   child: IconButton(
                                       iconSize: 60,
-                                      onPressed: () {},
+                                      onPressed: viewCareer,
                                       icon: const Iconify(
                                         Ic.outline_remove_red_eye,
                                         color: Colors.white,
@@ -1150,8 +1154,8 @@ class _ActivitiesState extends State<Activities> {
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

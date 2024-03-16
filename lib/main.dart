@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:madhack_job_app/Global_variables.dart';
 import 'package:madhack_job_app/employer/curved_bar.dart';
-import 'package:madhack_job_app/pages/admindashboard.dart';
 import 'package:madhack_job_app/pages/carousel_slider_screen.dart';
 import 'firebase_options.dart';
 // ignore: depend_on_referenced_packages
