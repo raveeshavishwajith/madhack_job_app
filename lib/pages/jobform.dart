@@ -32,16 +32,17 @@ class _JobformState extends State<Jobform> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Wrap(
-          
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                 
+                  const SizedBox(
+                    height: 20,
+                  ),
                   const Text(
                     'New Job',
                     style: TextStyle(
@@ -124,10 +125,13 @@ class _JobformState extends State<Jobform> {
                           });
                         }
                       },
-                      dropdownMenuEntries: <DropdownMenuEntry<JobType>>[
-                        DropdownMenuEntry(value: JobType.Remote, label: 'Remote'),
-                        DropdownMenuEntry(value: JobType.Onsite, label: 'Onsite'),
-                        DropdownMenuEntry(value: JobType.Hybrid, label: 'Hybrid'),
+                      dropdownMenuEntries: const <DropdownMenuEntry<JobType>>[
+                        DropdownMenuEntry(
+                            value: JobType.Remote, label: 'Remote'),
+                        DropdownMenuEntry(
+                            value: JobType.Onsite, label: 'Onsite'),
+                        DropdownMenuEntry(
+                            value: JobType.Hybrid, label: 'Hybrid'),
                       ],
                     ),
                   ),
@@ -166,35 +170,40 @@ class _JobformState extends State<Jobform> {
                           });
                         }
                       },
-                      dropdownMenuEntries: <DropdownMenuEntry<JobMode>>[
+                      dropdownMenuEntries: const <DropdownMenuEntry<JobMode>>[
                         DropdownMenuEntry(value: JobMode.mode1, label: 'mode1'),
                         DropdownMenuEntry(value: JobMode.mode2, label: 'mode2'),
                       ],
                     ),
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        Jobfields(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(right: 10),
+                        child: Jobfields(
                           controller: salaryController,
                           hinttext: "Salary",
                           obscuretext: false,
                           height: 50,
                           width: 165,
-                          right: 2,
-                          left: 20,
+                          right: 0,
+                          left: 0,
                         ),
-                        Jobfields(
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 10),
+                        child: Jobfields(
                           controller: locationController,
                           hinttext: "Location",
                           obscuretext: false,
                           height: 50,
                           width: 165,
-                          right: 20,
-                          left: 20,
-                        )
-                      ],
-                    ),
+                          right: 0,
+                          left: 00,
+                        ),
+                      )
+                    ],
                   ),
                   const SizedBox(
                     height: 20,
@@ -206,14 +215,11 @@ class _JobformState extends State<Jobform> {
                         foregroundColor: Colors.white,
                         backgroundColor: Color(0xFF095B66), // Text color
                         padding: const EdgeInsets.only(
-                            top: 12,
-                            bottom: 12,
-                            right: 155,
-                            left: 155), 
-                            // Button padding
+                            top: 12, bottom: 12, right: 155, left: 155),
+                        // Button padding
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(8.0), // Button border radius
+                          borderRadius: BorderRadius.circular(
+                              8.0), // Button border radius
                         ),
                       ),
                       child: const Text(
@@ -225,8 +231,9 @@ class _JobformState extends State<Jobform> {
                       ),
                     ),
                   ),
-                  
-                 
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),

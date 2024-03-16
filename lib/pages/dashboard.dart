@@ -184,8 +184,9 @@ class _DashboardState extends State<Dashboard> {
                                 fontWeight: FontWeight.normal)),
                       ),
                     ),
-
-                    const SizedBox(height: 20,),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Center(
                       child: Container(
                           child: ElevatedButton(
@@ -517,667 +518,669 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Find a Job',
-                  style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF095B66)),
-                )),
-            Row(
-              children: [
-                Container(
-                  height: 50,
-                  width: 280,
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5), // Shadow color
-                        spreadRadius: 2, // Spread radius
-                        blurRadius: 5, // Blur radius
-                        offset: Offset(0, 3),
-                        // Offset
-                      ),
-                    ],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: Color(0xFF095B66),
-                        size: 30,
-                      ),
-                      fillColor: Colors.white,
-                      border: InputBorder.none,
-                      hintText: 'Search Job',
-                      hintStyle: TextStyle(
-                          color: Color(0xFFBAD5D9),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w200),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Stack(children: [
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Find a Job',
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF095B66)),
+                  )),
+              Row(
+                children: [
                   Container(
-                    width: 50,
                     height: 50,
+                    width: 280,
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
                     decoration: BoxDecoration(
-                      color: Color(0xFF095B66),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  const Positioned(
-                    left: 8,
-                    top: 5,
-                    child: Iconify(
-                      Ic.outline_filter_alt,
-                      size: 35,
                       color: Colors.white,
-                    ),
-                  )
-                ]),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'Recent Opportunity',
-              style: TextStyle(
-                  color: Color(0xFF095B66),
-                  fontWeight: FontWeight.normal,
-                  fontSize: 20),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Stack(
-              children: [
-                Container(
-                  width: 350,
-                  height: 130,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFB2F6E2),
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Color(0xFF095B66), width: 1)),
-                  child: const Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Junior Web Develper',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'Jaffna, Sri Lanka',
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.normal),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5), // Shadow color
+                          spreadRadius: 2, // Spread radius
+                          blurRadius: 5, // Blur radius
+                          offset: Offset(0, 3),
+                          // Offset
                         ),
                       ],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Color(0xFF095B66),
+                          size: 30,
+                        ),
+                        fillColor: Colors.white,
+                        border: InputBorder.none,
+                        hintText: 'Search Job',
+                        hintStyle: TextStyle(
+                            color: Color(0xFFBAD5D9),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w200),
+                      ),
                     ),
                   ),
-                ),
-                Positioned(
-                  top: 75,
-                  child: Container(
-                    width: 107,
-                    height: 37,
-                    decoration: const BoxDecoration(
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Stack(children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF095B66),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    const Positioned(
+                      left: 8,
+                      top: 5,
+                      child: Iconify(
+                        Ic.outline_filter_alt,
+                        size: 35,
                         color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(5),
-                            bottomRight: Radius.circular(5))),
+                      ),
+                    )
+                  ]),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                'Recent Opportunity',
+                style: TextStyle(
+                    color: Color(0xFF095B66),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 20),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: 350,
+                    height: 130,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFB2F6E2),
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Color(0xFF095B66), width: 1)),
                     child: const Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Row(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '35K/',
+                            'Junior Web Develper',
                             style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF095B66)),
+                                fontSize: 20,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            'mon',
+                            'Jaffna, Sri Lanka',
                             style: TextStyle(
                                 fontSize: 15,
-                                fontWeight: FontWeight.normal,
-                                color: Color(0xFF095B66)),
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.normal),
                           ),
                         ],
                       ),
                     ),
                   ),
-                ),
-                Positioned(
-                  top: 100,
-                  left: 200,
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 20,
-                        decoration: BoxDecoration(
-                            color: const Color(0xFF095B66),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: const Center(
-                          child: Text(
-                            'Remote',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        width: 70,
-                        height: 20,
-                        decoration: BoxDecoration(
-                            color: const Color(0xFF095B66),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: const Center(
-                          child: Text(
-                            'Full Time',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-              width: 350,
-              child: Divider(
-                color: Color(0xFF095B66),
-                thickness: 2,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Stack(
-              children: [
-                Container(
-                  width: 350,
-                  height: 115,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.white, width: 1),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5), // Shadow color
-                        spreadRadius: 2, // Spread radius
-                        blurRadius: 5, // Blur radius
-                        offset: Offset(0, 3),
-                        // Offset
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Senior UI/UX Engineer',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.bold),
-                        ),
-                        const Text(
-                          'Colombo, Sri Lanka',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.normal),
-                        ),
-                        const Row(
-                          children: [
-                            Text(
-                              '75K/',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF095B66)),
-                            ),
-                            Text(
-                              'mon',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color(0xFF095B66)),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 20,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF095B66),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: const Center(
-                                child: Text(
-                                  'Remote',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 70,
-                              height: 20,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF095B66),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: const Center(
-                                child: Text(
-                                  'Full Time',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF4BDDB1),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: IconButton(
-                                  iconSize: 60,
-                                  onPressed: viewCareer,
-                                  icon: const Iconify(
-                                    Ic.outline_remove_red_eye,
-                                    color: Colors.white,
-                                  )),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 76,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Color(0xFF095B66), width: 2),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: Center(
-                                child: GestureDetector(
-                                  onTap: applyNow,
-                                  child: const Text(
-                                    'Apply Now',
-                                    style: TextStyle(
-                                      color: Color(0xFF095B66),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 10,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Stack(
-              children: [
-                Container(
-                  width: 350,
-                  height: 115,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.white, width: 1),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5), // Shadow color
-                        spreadRadius: 2, // Spread radius
-                        blurRadius: 5, // Blur radius
-                        offset: Offset(0, 3),
-                        // Offset
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Full Stack Developer',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.bold),
-                        ),
-                        const Text(
-                          'Jaffna, Sri Lanka',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.normal),
-                        ),
-                        const Row(
-                          children: [
-                            Text(
-                              '115K/',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF095B66)),
-                            ),
-                            Text(
-                              'mon',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color(0xFF095B66)),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 20,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF095B66),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: const Center(
-                                child: Text(
-                                  'Remote',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 70,
-                              height: 20,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF095B66),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: const Center(
-                                child: Text(
-                                  'Full Time',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF4BDDB1),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: IconButton(
-                                  iconSize: 60,
-                                  onPressed: () {},
-                                  icon: const Iconify(
-                                    Ic.outline_remove_red_eye,
-                                    color: Colors.white,
-                                  )),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 76,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Color(0xFF095B66), width: 2),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: Center(
-                                child: GestureDetector(
-                                  child: const Text(
-                                    'Apply Now',
-                                    style: TextStyle(
-                                      color: Color(0xFF095B66),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 10,
-                                    ),
-                                  ),
-                                  onTap: () {},
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Stack(
-              children: [
-                Container(
-                  width: 350,
-                  height: 115,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.white, width: 1),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5), // Shadow color
-                        spreadRadius: 2, // Spread radius
-                        blurRadius: 5, // Blur radius
-                        offset: Offset(0, 3),
-                        // Offset
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'System Analyst',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.bold),
-                        ),
-                        const Text(
-                          'Colombo, Sri Lanka',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFF095B66),
-                              fontWeight: FontWeight.normal),
-                        ),
-                        const Row(
+                  Positioned(
+                    top: 75,
+                    child: Container(
+                      width: 107,
+                      height: 37,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(5),
+                              bottomRight: Radius.circular(5))),
+                      child: const Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Row(
                           children: [
                             Text(
                               '35K/',
                               style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFF095B66)),
                             ),
                             Text(
                               'mon',
                               style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.normal,
                                   color: Color(0xFF095B66)),
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 20,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF095B66),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: const Center(
-                                child: Text(
-                                  'Remote',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 70,
-                              height: 20,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF095B66),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: const Center(
-                                child: Text(
-                                  'Full Time',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF4BDDB1),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: IconButton(
-                                  iconSize: 60,
-                                  onPressed: () {},
-                                  icon: const Iconify(
-                                    Ic.outline_remove_red_eye,
-                                    color: Colors.white,
-                                  )),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 76,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Color(0xFF095B66), width: 2),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: const Center(
-                                child: Text(
-                                  'Apply Now',
-                                  style: TextStyle(
-                                    color: Color(0xFF095B66),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
+                      ),
                     ),
                   ),
+                  Positioned(
+                    top: 100,
+                    left: 200,
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 20,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF095B66),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: const Center(
+                            child: Text(
+                              'Remote',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 70,
+                          height: 20,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF095B66),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: const Center(
+                            child: Text(
+                              'Full Time',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const SizedBox(
+                width: 350,
+                child: Divider(
+                  color: Color(0xFF095B66),
+                  thickness: 2,
                 ),
-              ],
-            ),
-          ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: 350,
+                    height: 115,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white, width: 1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5), // Shadow color
+                          spreadRadius: 2, // Spread radius
+                          blurRadius: 5, // Blur radius
+                          offset: Offset(0, 3),
+                          // Offset
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Senior UI/UX Engineer',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'Colombo, Sri Lanka',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.normal),
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '75K/',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF095B66)),
+                              ),
+                              Text(
+                                'mon',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Color(0xFF095B66)),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Remote',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 70,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Full Time',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                width: 30,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF4BDDB1),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: IconButton(
+                                    iconSize: 60,
+                                    onPressed: viewCareer,
+                                    icon: const Iconify(
+                                      Ic.outline_remove_red_eye,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 76,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Color(0xFF095B66), width: 2),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Center(
+                                  child: GestureDetector(
+                                    onTap: applyNow,
+                                    child: const Text(
+                                      'Apply Now',
+                                      style: TextStyle(
+                                        color: Color(0xFF095B66),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: 350,
+                    height: 115,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white, width: 1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5), // Shadow color
+                          spreadRadius: 2, // Spread radius
+                          blurRadius: 5, // Blur radius
+                          offset: Offset(0, 3),
+                          // Offset
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Full Stack Developer',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'Jaffna, Sri Lanka',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.normal),
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '115K/',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF095B66)),
+                              ),
+                              Text(
+                                'mon',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Color(0xFF095B66)),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Remote',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 70,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Full Time',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                width: 30,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF4BDDB1),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: IconButton(
+                                    iconSize: 60,
+                                    onPressed: () {},
+                                    icon: const Iconify(
+                                      Ic.outline_remove_red_eye,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 76,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Color(0xFF095B66), width: 2),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Center(
+                                  child: GestureDetector(
+                                    child: const Text(
+                                      'Apply Now',
+                                      style: TextStyle(
+                                        color: Color(0xFF095B66),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                      ),
+                                    ),
+                                    onTap: () {},
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: 350,
+                    height: 115,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white, width: 1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5), // Shadow color
+                          spreadRadius: 2, // Spread radius
+                          blurRadius: 5, // Blur radius
+                          offset: Offset(0, 3),
+                          // Offset
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'System Analyst',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'Colombo, Sri Lanka',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.normal),
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '35K/',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF095B66)),
+                              ),
+                              Text(
+                                'mon',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Color(0xFF095B66)),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Remote',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 70,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Full Time',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                width: 30,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF4BDDB1),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: IconButton(
+                                    iconSize: 60,
+                                    onPressed: () {},
+                                    icon: const Iconify(
+                                      Ic.outline_remove_red_eye,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 76,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Color(0xFF095B66), width: 2),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Apply Now',
+                                    style: TextStyle(
+                                      color: Color(0xFF095B66),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

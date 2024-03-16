@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
+import 'package:madhack_job_app/employer/employer_dashboard.dart';
 import 'package:madhack_job_app/pages/dashboard.dart';
 import 'package:madhack_job_app/pages/profile.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -18,7 +19,7 @@ class _BottomBarState extends State<EmployeeBottomBar> {
   int _currentindex = 0;
 
   List<Widget> body = const [
-    Text('Dashboard'),
+    EmployerDashboard(),
     Text('Application'),
     Text('Settings'),
   ];
@@ -46,7 +47,8 @@ class _BottomBarState extends State<EmployeeBottomBar> {
               fontFamily: 'Poppins', // Change font family as needed
               fontSize: 10, // Change font size as needed
             ),
-            selectedIconTheme: const IconThemeData(grade: BorderSide.strokeAlignCenter),
+            selectedIconTheme:
+                const IconThemeData(grade: BorderSide.strokeAlignCenter),
             onTap: (int newIndex) {
               setState(() {
                 _currentindex = newIndex;
@@ -70,10 +72,6 @@ class _BottomBarState extends State<EmployeeBottomBar> {
             ],
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white,
-
-            
-
-
           ),
         ),
       ),
