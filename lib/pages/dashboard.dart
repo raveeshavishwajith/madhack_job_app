@@ -124,7 +124,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                     DottedBorder(
                       borderType: BorderType.RRect,
-                      color: Color(0xFF095B66),
+                      color: const Color(0xFF095B66),
                       radius: const Radius.circular(10),
                       dashPattern: const [10, 4],
                       strokeCap: StrokeCap.round,
@@ -188,12 +188,12 @@ class _DashboardState extends State<Dashboard> {
                       height: 20,
                     ),
                     Center(
-                      child: Container(
-                          child: ElevatedButton(
+                      child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white,
-                          backgroundColor: Color(0xFF095B66), // Text color
+                          backgroundColor:
+                              const Color(0xFF095B66), // Text color
                           padding: const EdgeInsets.only(
                               top: 8,
                               bottom: 8,
@@ -211,7 +211,7 @@ class _DashboardState extends State<Dashboard> {
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w600),
                         ),
-                      )),
+                      ),
                     ),
                   ],
                 ),
@@ -520,21 +520,25 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  margin: const EdgeInsets.only(left: 15, top: 15),
+                  child: const Text(
                     'Find a Job',
                     style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF095B66)),
-                  )),
+                  ),
+                ),
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     height: 50,
@@ -547,7 +551,7 @@ class _DashboardState extends State<Dashboard> {
                           color: Colors.grey.withOpacity(0.5), // Shadow color
                           spreadRadius: 2, // Spread radius
                           blurRadius: 5, // Blur radius
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                           // Offset
                         ),
                       ],
@@ -578,7 +582,7 @@ class _DashboardState extends State<Dashboard> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color(0xFF095B66),
+                        color: const Color(0xFF095B66),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -613,9 +617,10 @@ class _DashboardState extends State<Dashboard> {
                     width: 350,
                     height: 130,
                     decoration: BoxDecoration(
-                        color: Color(0xFFB2F6E2),
+                        color: const Color(0xFFB2F6E2),
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Color(0xFF095B66), width: 1)),
+                        border: Border.all(
+                            color: const Color(0xFF095B66), width: 1)),
                     child: const Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Column(
@@ -748,7 +753,7 @@ class _DashboardState extends State<Dashboard> {
                           color: Colors.grey.withOpacity(0.5), // Shadow color
                           spreadRadius: 2, // Spread radius
                           blurRadius: 5, // Blur radius
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                           // Offset
                         ),
                       ],
@@ -857,7 +862,8 @@ class _DashboardState extends State<Dashboard> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                     border: Border.all(
-                                        color: Color(0xFF095B66), width: 2),
+                                        color: const Color(0xFF095B66),
+                                        width: 2),
                                     borderRadius: BorderRadius.circular(5)),
                                 child: Center(
                                   child: GestureDetector(
@@ -898,7 +904,7 @@ class _DashboardState extends State<Dashboard> {
                           color: Colors.grey.withOpacity(0.5), // Shadow color
                           spreadRadius: 2, // Spread radius
                           blurRadius: 5, // Blur radius
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                           // Offset
                         ),
                       ],
@@ -993,7 +999,7 @@ class _DashboardState extends State<Dashboard> {
                                     borderRadius: BorderRadius.circular(5)),
                                 child: IconButton(
                                     iconSize: 60,
-                                    onPressed: () {},
+                                    onPressed: viewCareer,
                                     icon: const Iconify(
                                       Ic.outline_remove_red_eye,
                                       color: Colors.white,
@@ -1007,10 +1013,12 @@ class _DashboardState extends State<Dashboard> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                     border: Border.all(
-                                        color: Color(0xFF095B66), width: 2),
+                                        color: const Color(0xFF095B66),
+                                        width: 2),
                                     borderRadius: BorderRadius.circular(5)),
                                 child: Center(
                                   child: GestureDetector(
+                                    onTap: applyNow,
                                     child: const Text(
                                       'Apply Now',
                                       style: TextStyle(
@@ -1019,7 +1027,6 @@ class _DashboardState extends State<Dashboard> {
                                         fontSize: 10,
                                       ),
                                     ),
-                                    onTap: () {},
                                   ),
                                 ),
                               ),
@@ -1048,7 +1055,7 @@ class _DashboardState extends State<Dashboard> {
                           color: Colors.grey.withOpacity(0.5), // Shadow color
                           spreadRadius: 2, // Spread radius
                           blurRadius: 5, // Blur radius
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                           // Offset
                         ),
                       ],
@@ -1143,7 +1150,7 @@ class _DashboardState extends State<Dashboard> {
                                     borderRadius: BorderRadius.circular(5)),
                                 child: IconButton(
                                     iconSize: 60,
-                                    onPressed: () {},
+                                    onPressed: viewCareer,
                                     icon: const Iconify(
                                       Ic.outline_remove_red_eye,
                                       color: Colors.white,
@@ -1157,17 +1164,173 @@ class _DashboardState extends State<Dashboard> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                     border: Border.all(
-                                        color: Color(0xFF095B66), width: 2),
+                                        color: const Color(0xFF095B66),
+                                        width: 2),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Center(
+                                  child: GestureDetector(
+                                    onTap: applyNow,
+                                    child: const Text(
+                                      'Apply Now',
+                                      style: TextStyle(
+                                        color: Color(0xFF095B66),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: 350,
+                    height: 115,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white, width: 1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5), // Shadow color
+                          spreadRadius: 2, // Spread radius
+                          blurRadius: 5, // Blur radius
+                          offset: const Offset(0, 3),
+                          // Offset
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'System Analyst',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'Colombo, Sri Lanka',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF095B66),
+                                fontWeight: FontWeight.normal),
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '35K/',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF095B66)),
+                              ),
+                              Text(
+                                'mon',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Color(0xFF095B66)),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
                                     borderRadius: BorderRadius.circular(5)),
                                 child: const Center(
                                   child: Text(
-                                    'Apply Now',
+                                    'Remote',
                                     style: TextStyle(
-                                      color: Color(0xFF095B66),
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10,
                                     ),
                                     textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 70,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF095B66),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
+                                  child: Text(
+                                    'Full Time',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                width: 30,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF4BDDB1),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: IconButton(
+                                    iconSize: 60,
+                                    onPressed: viewCareer,
+                                    icon: const Iconify(
+                                      Ic.outline_remove_red_eye,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 76,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: const Color(0xFF095B66),
+                                        width: 2),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Center(
+                                  child: GestureDetector(
+                                    onTap: applyNow,
+                                    child: const Text(
+                                      'Apply Now',
+                                      style: TextStyle(
+                                        color: Color(0xFF095B66),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
                                   ),
                                 ),
                               ),

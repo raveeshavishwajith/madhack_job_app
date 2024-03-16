@@ -556,7 +556,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                           color: Colors.grey.withOpacity(0.5), // Shadow color
                           spreadRadius: 2, // Spread radius
                           blurRadius: 5, // Blur radius
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                           // Offset
                         ),
                       ],
@@ -719,7 +719,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                           color: Colors.grey.withOpacity(0.5), // Shadow color
                           spreadRadius: 2, // Spread radius
                           blurRadius: 5, // Blur radius
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                           // Offset
                         ),
                       ],
@@ -814,7 +814,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                     borderRadius: BorderRadius.circular(5)),
                                 child: IconButton(
                                     iconSize: 60,
-                                    onPressed: () {},
+                                    onPressed: viewCareer,
                                     icon: const Iconify(
                                       Ic.outline_remove_red_eye,
                                       color: Colors.white,
@@ -1170,7 +1170,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                         borderRadius: BorderRadius.circular(5)),
                                     child: IconButton(
                                         iconSize: 60,
-                                        onPressed: () {},
+                                        onPressed: viewCareer,
                                         icon: const Iconify(
                                           AntDesign.delete_outlined,
                                           color: Colors.white,
@@ -1335,7 +1335,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                     borderRadius: BorderRadius.circular(5)),
                                 child: IconButton(
                                     iconSize: 60,
-                                    onPressed: () {},
+                                    onPressed: viewCareer,
                                     icon: const Iconify(
                                       AntDesign.delete_outlined,
                                       color: Colors.white,
@@ -1498,7 +1498,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                     borderRadius: BorderRadius.circular(5)),
                                 child: IconButton(
                                     iconSize: 60,
-                                    onPressed: () {},
+                                    onPressed: viewCareer,
                                     icon: const Iconify(
                                       AntDesign.delete_outlined,
                                       color: Colors.white,
