@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:madhack_job_app/employer/curved_bar.dart';
 import 'package:madhack_job_app/global_variables.dart';
 import 'package:madhack_job_app/pages/admindashboard.dart';
 import 'package:madhack_job_app/pages/navigationBar.dart';
@@ -103,7 +104,7 @@ class _CarouselSliderScreenState extends State<CarouselSliderScreen> {
                             password: _passwordController.text,
                             buildContext: context,
                             userDashboard: const BottomBar(),
-                            adminDashboard: const AdminDashboard(),
+                            adminDashboard: const CurvedBar(),
                           );
                         },
                         style: ElevatedButton.styleFrom(

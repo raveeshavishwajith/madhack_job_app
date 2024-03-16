@@ -33,7 +33,6 @@ class _CurvedBarState extends State<CurvedBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Center(
         child: body[_currentindex],
       ),
