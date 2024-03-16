@@ -30,8 +30,419 @@ class _ProfileState extends State<Profile> {
   final addressController = TextEditingController();
   final linkedinController = TextEditingController();
   final githubController = TextEditingController();
+  final jobController = TextEditingController();
+  final companyController = TextEditingController();
+  final st_dateController = TextEditingController();
+  final end_dateController = TextEditingController();
+  final ste_dateController = TextEditingController();
+  final ende_dateController = TextEditingController();
+  final descriptionController = TextEditingController();
+  final edescriptionController = TextEditingController();
+  final qdescriptionController = TextEditingController();
+  final schoolController = TextEditingController();
+  final degreeController = TextEditingController();
+  final studyController = TextEditingController();
+  final qualificationController = TextEditingController();
+  final qdateController = TextEditingController();
+
+  bool isChexked = false;
 
   final FirebaseService firebaseService = FirebaseService();
+
+  Future viewWorkExperience() {
+    return showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext context) {
+          return Wrap(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          child: const Icon(
+                            Icons.cancel,
+                            color: Color(0xFF095B66),
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                          height: 5,
+                        )
+                      ],
+                    ),
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Add Work Experience',
+                        style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF095B66)),
+                      ),
+                    ),
+                    Jobfields(
+                      controller: jobController,
+                      hinttext: 'Job Title',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: companyController,
+                      hinttext: 'Job Company',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: st_dateController,
+                      hinttext: 'Start Date',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: end_dateController,
+                      hinttext: 'End Date',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        Checkbox(
+                          value: isChexked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChexked = value!;
+                            });
+                          },
+                          activeColor: Color(0xFF095B66),
+                        ),
+                        const Text(
+                          "I’m currently working in this role",
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.normal,
+                              color: Color(0xFF095B66)),
+                        ),
+                      ],
+                    ),
+                    Jobfields(
+                      controller: descriptionController,
+                      hinttext: 'Description',
+                      obscuretext: false,
+                      height: 171,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: const Color(0xFF095B66), // Text color
+                        padding: const EdgeInsets.only(
+                            top: 8,
+                            bottom: 8,
+                            right: 140,
+                            left: 140), // Button padding
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              8.0), // Button border radius
+                        ),
+                      ),
+                      child: const Text(
+                        "Save",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
+  Future viewEducation() {
+    return showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext context) {
+          return Wrap(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          child: const Icon(
+                            Icons.cancel,
+                            color: Color(0xFF095B66),
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                          height: 5,
+                        )
+                      ],
+                    ),
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Add Education',
+                        style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF095B66)),
+                      ),
+                    ),
+                    Jobfields(
+                      controller: schoolController,
+                      hinttext: 'Institute/School',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: degreeController,
+                      hinttext: 'Degree',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: studyController,
+                      hinttext: 'Field of Study',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: ste_dateController,
+                      hinttext: 'Start Date',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: ende_dateController,
+                      hinttext: 'End Date',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        Checkbox(
+                          value: isChexked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChexked = value!;
+                            });
+                          },
+                          activeColor: Color(0xFF095B66),
+                        ),
+                        const Text(
+                          "I’m currently working in this role",
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.normal,
+                              color: Color(0xFF095B66)),
+                        ),
+                      ],
+                    ),
+                    Jobfields(
+                      controller: edescriptionController,
+                      hinttext: 'Description',
+                      obscuretext: false,
+                      height: 171,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: const Color(0xFF095B66), // Text color
+                        padding: const EdgeInsets.only(
+                            top: 8,
+                            bottom: 8,
+                            right: 140,
+                            left: 140), // Button padding
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              8.0), // Button border radius
+                        ),
+                      ),
+                      child: const Text(
+                        "Save",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
+  Future viewQualifications() {
+    return showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext context) {
+          return Wrap(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          child: const Icon(
+                            Icons.cancel,
+                            color: Color(0xFF095B66),
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                          height: 5,
+                        )
+                      ],
+                    ),
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Add Qualification',
+                        style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF095B66)),
+                      ),
+                    ),
+                    Jobfields(
+                      controller: qualificationController,
+                      hinttext: 'Qualification',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    Jobfields(
+                      controller: qdateController,
+                      hinttext: 'Date',
+                      obscuretext: false,
+                      height: 50,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    
+                    Jobfields(
+                      controller: qdescriptionController,
+                      hinttext: 'Description',
+                      obscuretext: false,
+                      height: 171,
+                      width: 350,
+                      right: 0,
+                      left: 0,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: const Color(0xFF095B66), // Text color
+                        padding: const EdgeInsets.only(
+                            top: 8,
+                            bottom: 8,
+                            right: 140,
+                            left: 140), // Button padding
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              8.0), // Button border radius
+                        ),
+                      ),
+                      child: const Text(
+                        "Save",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +517,7 @@ class _ProfileState extends State<Profile> {
                   color: Color(0xFF095B66)),
             ),
             const SizedBox(
-              height: 20,
+              height: 50,
             ),
             Container(
               child: Column(
@@ -161,12 +572,15 @@ class _ProfileState extends State<Profile> {
                                             )
                                           ],
                                         ),
-                                        const Text(
-                                          'About Me',
-                                          style: TextStyle(
-                                              fontSize: 26,
-                                              fontWeight: FontWeight.bold,
-                                              color: Color(0xFF095B66)),
+                                        const Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(
+                                            'About Me',
+                                            style: TextStyle(
+                                                fontSize: 26,
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xFF095B66)),
+                                          ),
                                         ),
                                         Jobfields(
                                           controller: nameController,
@@ -299,45 +713,50 @@ class _ProfileState extends State<Profile> {
                   const SizedBox(
                     height: 8,
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Iconify(
+                      const Iconify(
                         MaterialSymbols.sunny_outline,
                         color: Color(0xFF095B66),
                         size: 30,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
-                        'Work Experience',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF095B66)),
-                      )
+                      GestureDetector(
+                          onTap: viewWorkExperience,
+                          child: const Text(
+                            'Work Experience',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFF095B66)),
+                          )),
                     ],
                   ),
                   const SizedBox(
                     height: 8,
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Iconify(
+                      const Iconify(
                         Cil.education,
                         color: Color(0xFF095B66),
                         size: 30,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
-                        'Education',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF095B66)),
-                      )
+                      GestureDetector(
+                        onTap: viewEducation,
+                        child: const Text(
+                          'Education',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF095B66)),
+                        ),
+                      ),
                     ],
                   ),
                   const SizedBox(
@@ -365,34 +784,37 @@ class _ProfileState extends State<Profile> {
                   const SizedBox(
                     height: 8,
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Iconify(
+                      const Iconify(
                         Ph.exam,
                         color: Color(0xFF095B66),
                         size: 30,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
-                        'Qualification',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF095B66)),
-                      )
+                      GestureDetector(
+                        onTap: viewQualifications,
+                        child: const Text(
+                          'Qualification',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF095B66)),
+                        ),
+                      ),
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   const Divider(
                     color: Color(0xFF095B66), // Change line color as needed
                     thickness: 2, // Change line thickness as needed
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   const Row(
                     children: [

@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
+import 'package:madhack_job_app/employer/applications.dart';
 import 'package:madhack_job_app/employer/employer_dashboard.dart';
 import 'package:madhack_job_app/employer/employer_profile.dart';
 import 'package:madhack_job_app/pages/dashboard.dart';
@@ -24,7 +25,7 @@ class _CurvedBarState extends State<CurvedBar> {
 
   List<Widget> body = const [
     EmployerDashboard(),
-    Text('Application'),
+    EmployerApplication(),
     Employerprofile(),
     Jobform(),
   ];
