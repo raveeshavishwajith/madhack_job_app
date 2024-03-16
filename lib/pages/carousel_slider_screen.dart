@@ -1,11 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:madhack_job_app/global_variables.dart';
 import 'package:madhack_job_app/pages/admindashboard.dart';
-import 'package:madhack_job_app/pages/dashboard.dart';
+import 'package:madhack_job_app/pages/navigationBar.dart';
+import 'package:madhack_job_app/services/firebaseServices.dart';
 
 class CarouselSliderScreen extends StatefulWidget {
   const CarouselSliderScreen({super.key});
@@ -30,96 +29,8 @@ class _CarouselSliderScreenState extends State<CarouselSliderScreen> {
     super.initState();
   }
 
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
-  Future<void> createUserWithEmailAndPassword(
-      {required String email,
-      required String password,
-      required String username,
-      required String accountType,
-      required String confirmPassword}) async {
-    try {
-      // Create user with email and password
-      if (password == confirmPassword) {
-        await FirebaseAuth.instance
-            .createUserWithEmailAndPassword(
-                email: _emailController.text.toString(),
-                password: _passwordController.text.toString())
-            .then((value) {
-          Navigator.pop(context);
-          Future.delayed(const Duration(seconds: 4), () {
-            _loginBottomSheet();
-          });
-        }).onError((error, stackTrace) {});
-        // Extract the user's UID
-        String uid = FirebaseAuth.instance.currentUser!.uid;
-
-        // Store additional user information in Firestore
-        await _firestore.collection('users').doc(uid).set({
-          'username': username,
-          'accountType': accountType,
-          // Add more fields as needed
-        });
-      }
-    } catch (error) {
-      // Handle error
-      print('Error creating user: $error');
-    }
-  }
-
-  Future<String?> getAccountType(String uid) async {
-    try {
-      DocumentSnapshot<Map<String, dynamic>> userDoc =
-          await FirebaseFirestore.instance.collection('users').doc(uid).get();
-
-      if (userDoc.exists &&
-          userDoc.data() != null &&
-          userDoc.data()!.containsKey('accountType')) {
-        return userDoc.data()!['accountType'];
-      } else {
-        return null;
-      }
-    } catch (error) {
-      // Handle errors
-      print('Error getting user account type: $error');
-      return null;
-    }
-  }
-
-  Future<void> loginUserWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
-    try {
-      // Create user with email and password
-
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-              email: _emailController.text.toString(),
-              password: _passwordController.text.toString())
-          .then((value) async {
-        Navigator.pop(context);
-        String uid = FirebaseAuth.instance.currentUser!.uid;
-        String? accountType = await getAccountType(uid);
-        print(accountType);
-        if (accountType == "User Account") {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const Dashboard()));
-        } else if (accountType == "Company Account") {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const AdminDashboard()));
-        }
-      }).onError((error, stackTrace) {
-        print('Error ${error}');
-      });
-      // Extract the user's UID
-
-      // if()
-    } catch (error) {
-      // Handle error
-      print('Error creating user: $error');
-    }
-  }
+  // final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseService firebaseService = FirebaseService();
 
   Future<void> _loginBottomSheet() {
     return showModalBottomSheet<void>(
@@ -187,9 +98,13 @@ class _CarouselSliderScreenState extends State<CarouselSliderScreen> {
                       decoration: const BoxDecoration(),
                       child: ElevatedButton(
                         onPressed: () {
-                          loginUserWithEmailAndPassword(
-                              email: _emailController.text,
-                              password: _passwordController.text);
+                          firebaseService.loginUserWithEmailAndPassword(
+                            email: _emailController.text,
+                            password: _passwordController.text,
+                            buildContext: context,
+                            userDashboard: const BottomBar(),
+                            adminDashboard: const AdminDashboard(),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: GlobalVariables.darkGreen,
@@ -390,7 +305,8 @@ class _CarouselSliderScreenState extends State<CarouselSliderScreen> {
                         decoration: const BoxDecoration(),
                         child: ElevatedButton(
                           onPressed: () {
-                            createUserWithEmailAndPassword(
+                            firebaseService.createUserWithEmailAndPassword(
+                              buildContext: context,
                               email: _emailController.text,
                               password: _passwordController.text,
                               confirmPassword: _confirmPasswordController.text,
