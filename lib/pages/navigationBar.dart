@@ -19,8 +19,7 @@ class _BottomBarState extends State<BottomBar> {
   List<Widget> body = const [
     Dashboard(),
     Text('Activities'),
-    Profie(),
-    
+    Profile(),
   ];
 
   @override
@@ -46,9 +45,6 @@ class _BottomBarState extends State<BottomBar> {
               fontFamily: 'Poppins', // Change font family as needed
               fontSize: 10, // Change font size as needed
             ),
-
-            
-            
             onTap: (int newIndex) {
               setState(() {
                 _currentindex = newIndex;
@@ -56,7 +52,6 @@ class _BottomBarState extends State<BottomBar> {
             },
             items: const [
               BottomNavigationBarItem(
-              
                 label: 'Dashboard',
                 icon: Icon(Icons.home, color: Colors.white),
               ),

@@ -213,7 +213,7 @@ class _JobformState extends State<Jobform> {
                     left: 20.0, right: 20, bottom: 8.0, top: 5.0),
                 child: ElevatedButton(
                   onPressed: () {},
-                  child:Text(
+                  child: Text(
                     "Add",
                     style: TextStyle(
                         fontSize: 22,
