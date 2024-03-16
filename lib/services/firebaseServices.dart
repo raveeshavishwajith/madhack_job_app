@@ -77,20 +77,43 @@ class FirebaseService {
     try {
       // Create user with email and password
 
-      await FirebaseAuth.instance
+      await _auth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((value) async {
-        Navigator.pop(buildContext);
+        //Navigator.pop(buildContext);
         String uid = FirebaseAuth.instance.currentUser!.uid;
         String? accountType = await getAccountType(uid);
         print(accountType);
         if (accountType == "User Account") {
+          print('user');
           Navigator.push(buildContext,
               MaterialPageRoute(builder: (context) => userDashboard));
         } else if (accountType == "Company Account") {
+          print('admin');
           Navigator.push(buildContext,
               MaterialPageRoute(builder: (context) => adminDashboard));
+        } else {
+          print('nothing');
+          Navigator.push(
+            buildContext,
+            MaterialPageRoute(
+              builder: (context) => const Scaffold(
+                body: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              ),
+            ),
+          );
         }
+        // String? accountType = await getAccountType(uid);
+        // print(accountType);
+        // if (accountType == "User Account") {
+        //   Navigator.push(buildContext,
+        //       MaterialPageRoute(builder: (context) => userDashboard));
+        // } else if (accountType == "Company Account") {
+        //   Navigator.push(buildContext,
+        //       MaterialPageRoute(builder: (context) => adminDashboard));
+        // }
       }).onError((error, stackTrace) {
         print('Error ${error}');
       });

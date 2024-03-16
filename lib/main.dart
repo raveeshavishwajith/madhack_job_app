@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:madhack_job_app/Global_variables.dart';
 import 'package:madhack_job_app/pages/admindashboard.dart';
 import 'package:madhack_job_app/pages/carousel_slider_screen.dart';
-import 'package:madhack_job_app/pages/dashboard.dart';
 import 'firebase_options.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
-import 'package:madhack_job_app/pages/jobform.dart';
 import 'package:madhack_job_app/pages/navigationBar.dart';
 
 void main() async {
@@ -34,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: AuthenticationWrapper(),
+      home: const AuthenticationWrapper(),
     );
   }
 }
@@ -78,25 +76,49 @@ class _AuthenticationWrapperState extends State<AuthenticationWrapper> {
         } else {
           if (snapshot.hasData) {
             // User is logged in
+            return FutureBuilder(
+              future: getAccountType(snapshot.data!.uid),
+              builder: (context, accountTypeSnapshot) {
+                if (accountTypeSnapshot.connectionState ==
+                    ConnectionState.waiting) {
+                  return const Scaffold(); // Or a loading screen
+                } else {
+                  final accountType = accountTypeSnapshot.data;
+                  if (accountType != null) {
+                    //print(accountType);
+                    if (accountType == "User Account") {
+                      return const BottomBar();
+                    } else if (accountType == "Company Account") {
+                      return const AdminDashboard();
+                    } else {
+                      // Handle other account types
+                      return const CarouselSliderScreen(); // Return some default widget or handle accordingly
+                    }
+                  } else {
+                    // Handle null or error case
+                    return const CarouselSliderScreen(); // Return some default widget or handle accordingly
+                  }
+                }
+              },
+            );
 
-            Future<String?> accountType = getAccountType(snapshot.data!.uid);
+            // Future<String?> accountType = getAccountType(snapshot.data!.uid);
 
-            // print(accountType);
-            if (accountType == "User Account") {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const BottomBar()));
-            } else if (accountType == "Company Account") {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AdminDashboard()));
-            }
+            // // print(accountType);
+            // if (accountType == "User Account") {
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context) => const BottomBar()));
+            // } else if (accountType == "Company Account") {
+            //   Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //           builder: (context) => const AdminDashboard()));
+            // }
 
-            print(snapshot);
-            return const BottomBar();
+            // print(snapshot);
+            // return const BottomBar();
           } else {
-            // User is not logged in
-            return const CarouselSliderScreen();
+            return CarouselSliderScreen();
           }
         }
       },

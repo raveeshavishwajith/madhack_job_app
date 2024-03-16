@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
-import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:madhack_job_app/pages/dashboard.dart';
 import 'package:madhack_job_app/pages/profile.dart';
 
