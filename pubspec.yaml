@@ -45,6 +45,8 @@ dependencies:
   async: ^2.11.0
   fluttertoast: ^8.2.4
   iconify_flutter: ^0.0.5
+  dotted_border: ^2.1.0
+ 
 
 dev_dependencies:
   flutter_test:
